@@ -1,0 +1,11 @@
+.jumbotron {
+    margin: auto;
+    margin-top: 20px;
+    min-height: 60px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    width: 50%;
+    background-color: rgba(255, 255, 255, 0.172);
+    color: white;
+    border-radius: 16px;
+}
