@@ -1,0 +1,11 @@
+.navbar {
+    color: white;
+}
+.navbar h1 {
+    margin: auto;
+}   
+
+.navbar a {
+    float: right;
+    color: rgb(213, 208, 208);
+}
