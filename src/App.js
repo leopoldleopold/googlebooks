@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <Router>
       <div>
-        {/* <Route exact path="saved" component={Saved} /> */}
+        <Route exact path="saved" component={Saved} />
         <Route exact path="/" component={Main} />
        </div>
     </Router>
