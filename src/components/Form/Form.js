@@ -23,8 +23,7 @@ class Form extends Component {
         console.log(api);
         api.getGooglebooks(this.state.booktitle, this.state.api)
         .then(res => {
-            console.log(JSON.stringify(res.data));
-
+            console.log(res);
             const bookList = []
 
             for (var i = 0; i < res.data.items.length; i++) {
