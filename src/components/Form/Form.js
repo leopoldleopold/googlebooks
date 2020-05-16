@@ -6,7 +6,7 @@ class Form extends Component {
     state = {
         booktitle: "",
         results: [],
-        api: `${process.env.REACT_APP_GOOGLE_BOOKS_KEY}`
+        api: `${process.env.REACT_APP_BOOKS_KEY}`
     };
 
 
