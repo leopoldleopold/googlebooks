@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./Form.css";
-import api from "../../utils/api"
+import api from "../../utils/api";
+import { Container, Row, Col } from "../Grid/Grid";
+import { BookList, BookListItem } from "../BookList/BookList";
 
 class Form extends Component {
     state = {
@@ -23,12 +25,11 @@ class Form extends Component {
         console.log(api);
         api.getGooglebooks(this.state.booktitle, this.state.api)
         .then(res => {
-            console.log(JSON.stringify(res.data));
-
-            const bookList = []
+            console.log(res);
+            const books = []
 
             for (var i = 0; i < res.data.items.length; i++) {
-                bookList.push({
+                books.push({
                     id: res.data.items[i].id,
                     authors: res.data.items[i].volumeInfo.authors,
                     title: res.data.items[i].volumeInfo.title,
@@ -37,7 +38,8 @@ class Form extends Component {
                     link: res.data.items[i].volumeInfo.infoLink
                 })
             }
-            console.log(bookList);
+            this.setState({ booktitle: "" });
+            // console.log(bookList);
             // this.setState({ results: bookList})
             // console.log(results);
         //    clear search form
@@ -47,6 +49,7 @@ class Form extends Component {
 
     render() {
         return (
+            <div>
             <form>
                 <input
                 type="text"
@@ -58,6 +61,32 @@ class Form extends Component {
                 <br></br>
                 <button onClick={this.handleFormSubmit}>Submit</button>
             </form>
+            <Container>
+                <Row>
+                    <Col size="md-12">
+                        {!this.state.books.length ? (
+                            <h1 className="text-center">No Recipes to Display</h1>
+                        ) : (
+                            <BookList>
+                                {this.state.books.map(book => {
+                                    return(
+                                        <BookListItem
+                                        author={book.author}
+                                        title={book.title}
+                                        link={book.link}
+                                        thumbnail={book.image}
+                                        description={book.description}
+                                        />
+                                    );
+                                })}
+                            </BookList>
+                        )
+                    }
+
+                    </Col>
+                </Row>
+            </Container>
+            </div>
         );
     }
 }
