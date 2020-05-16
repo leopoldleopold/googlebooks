@@ -1,17 +1,17 @@
 import React from "react";
-import "./style.css";
+import "./Thumbnail.css";
 
 function Thumbnail({ src }) {
     return (
-        <div
+      <div
         className="thumbnail"
         role="img"
         aria-label="Book Image"
         style={{
-            backgroundImage: 'url(${src})'
+          backgroundImage: `url(${src})`
         }}
-        />
-    )
-}
+      />
+    );
+  }
 
 export default Thumbnail;
