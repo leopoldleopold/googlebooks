@@ -1,0 +1,16 @@
+.navbar {
+    color: white;
+}
+.navbar h1 {
+    margin: auto;
+}   
+
+.navbar a {
+    float: right;
+    color: rgb(213, 208, 208);
+    width: 50px;
+}
+
+a:first-of-type {
+    float: right;
+}
